@@ -8,7 +8,7 @@ Trigger auto-key-pressing each time you press F2.
 
 ### Change delay time
 
-Just change number in **DELAY\*TIME**
+Just change number in **DELAY_TIME**
 
 ### Exception
 
