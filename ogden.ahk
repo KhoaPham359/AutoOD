@@ -1,7 +1,7 @@
 SetTitleMatchMode, 2
 ;#IfWinActive - Google Chrome
 #SingleInstance, force
-
+DELAY_TIME := 72000     ;ms
 max := 0
 dem := 0
 option := 0
@@ -187,7 +187,7 @@ else if(option = 2)
     ;splash_counter(job_reviewed,job_remaining)
     Loop 
     {
-        Sleep, 72000 ;time between two ads reviewed
+        Sleep, %DELAY_TIME% ;time between two ads reviewed
         dem := dem + 1
         rand := rand + 1
         sendText(rand)
