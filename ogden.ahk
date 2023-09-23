@@ -1,14 +1,19 @@
 SetTitleMatchMode, 2
 ;#IfWinActive - Google Chrome
 #SingleInstance, force
-DELAY_TIME := 72000     ;ms
+
+DELAY_TIME := 90     ;second
+
+
+
+;  DO NOT MODIFY ALL THING BELOW!!!
 max := 0
 dem := 0
 option := 0
 rand := 0
 job_reviewed := 0
 NR:=0
-
+DELAY_TIME_IN_MILISECOND := DELAY_TIME * 1000
 sendNegaText(type)
 {
     if(type = 1)
@@ -124,11 +129,12 @@ MsgBox, 0, READ THIS CAREFULLY!,
 Press F2 to pause/continue the program
 Press Esc to exit the program 
 Alert!: Make sure that Unikey (or whatever program has the same function) has been turned off to use this program! 
-)
+) 
+TASK_COUNT := Floor(3600 / DELAY_TIME)
 InputBox, option, Enter your option!,
 (
 1. Once each time you press F2.
-2. Loop mode, this will loop once each 72 seconds (50 times an hour).
+2. Loop mode, this will loop once each %DELAY_TIME% seconds (%TASK_COUNT% times an hour).
     )
 If (option = 1)
 {
@@ -187,7 +193,7 @@ else if(option = 2)
     ;splash_counter(job_reviewed,job_remaining)
     Loop 
     {
-        Sleep, %DELAY_TIME% ;time between two ads reviewed
+        Sleep, %DELAY_TIME_IN_MILISECOND% ;time between two ads reviewed
         dem := dem + 1
         rand := rand + 1
         sendText(rand)
